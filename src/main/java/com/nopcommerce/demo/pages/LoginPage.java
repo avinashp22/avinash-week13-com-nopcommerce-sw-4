@@ -5,24 +5,23 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends Utility {
 
-    By welcomeText = By.xpath("//h1[contains(text(),'Welcome, Please Sign In!')]");
-    By emailField = By.id("Email");
-    By passwordField = By.name("Password");
-    By loginButton = By.xpath("//button[contains(text(),'Log in')]");
-    By errorMessage = By.xpath("//div[@class='message-error validation-summary-errors']");
-    By welcomeMessage = By.xpath("//h2[normalize-space()='Welcome to our store']");
+    By welcomePageSignInText = By.xpath("//h1[contains(text(),'Welcome, Please Sign In!')]");
+    By checkoutAsGuestButton = By.xpath("//button[contains(text(),'Checkout as Guest')]");
+    By registerButton = By.xpath("//button[contains(text(),'Register')]");
+    By emailTextBox = By.xpath("//input[@id='Email']");
+    By passwordTextBox = By.xpath("//input[@id='Password']");
+    By loginLink = By.xpath("//button[@class='button-1 login-button']");
 
-    public String getWelcomeText(){return getTextFromElement(welcomeText);}
+    public String getWelcomePageSignInText() {return getTextFromElement(welcomePageSignInText);}
 
-    public void enterEmailId(String email){
-        sendTextToElement(emailField, email);}
+    public void clickOnCheckoutAsGuestButton() {clickOnElement(checkoutAsGuestButton);}
 
-    public void enterPassword(String password){
-        sendTextToElement(passwordField, password);}
+    public void clickOnRegisterButton() {clickOnElement(registerButton);}
 
-    public void clickOnLoginButton(){clickOnElement(loginButton);}
+    public void inputEmail(String email) {sendTextToElement(emailTextBox, email);}
 
-    public String getErrorMessage(){return getTextFromElement(errorMessage);}
+    public void inputPassword(String password) {sendTextToElement(passwordTextBox, password);}
 
-    public String getWelcomeMessage(){return getTextFromElement(welcomeMessage);}
+    public void clickOnLogin() {clickOnElement(loginLink);}
+
 }
